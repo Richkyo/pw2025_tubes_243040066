@@ -22,7 +22,7 @@ $result = $koneksi->query($sql);
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            background-color: rgb(95, 93, 93);
             margin: 0;
             padding: 20px;
         }
@@ -41,7 +41,7 @@ $result = $koneksi->query($sql);
 
         .card {
             width: 420px;
-            background: white;
+            background-color: rgb(190, 184, 184);
             border-radius: 10px;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
             overflow: hidden;

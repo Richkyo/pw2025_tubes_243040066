@@ -30,9 +30,14 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <title>Login Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(95, 93, 93);
+        }
+    </style>
 </head>
 
-<body class="bg-light d-flex justify-content-center align-items-center vh-100">
+<body class="d-flex justify-content-center align-items-center vh-100">
 
     <div class="card shadow p-4" style="width: 24rem;">
         <h4 class="mb-3 text-center">Login Admin</h4>
