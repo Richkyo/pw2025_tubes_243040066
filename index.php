@@ -136,7 +136,7 @@ url:
     <section class="hero d-flex align-items-center justify-content-center" id="hero">
       <div class="container hero-overlay text-start">
         <h1 class="display-5 fw-bold">Lyra's Gallery</h1>
-        <a href="login/login.php" class="btn btn-daftar mt-2 px-4 py-2">Login Admin</a>
+        <a href="login/login_user.php" class="btn btn-daftar mt-2 px-4 py-2">Login User</a>
       </div>
     </section>
 
