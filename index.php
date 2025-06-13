@@ -122,9 +122,9 @@ url:
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#hero">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Live">Search</a></li>
           <li class="nav-item"><a class="nav-link" href="#EmotionalArt">Art</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Kabar</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Riset</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Footer">Footer</a></li>
           <li class="nav-item"><a class="nav-link" href="login/login.php">Admin</a></li>
         </ul>
       </div>
@@ -141,7 +141,7 @@ url:
     </section>
 
     <!-- Live Search Section -->
-    <section class="py-4 mt-5">
+    <section class="Live py-4 mt-5">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8">
@@ -204,7 +204,7 @@ url:
       <div class="row">
         <!-- Deskripsi -->
         <div class="col-lg-3 mb-4">
-          <h2 class="fw-bold text-white">redraw Art</h2>
+          <h2 class="fw-bold text-white">Redraw Art</h2>
           <p class="text-white">
             <strong>Redraw Art</strong> adalah kegiatan menggambar ulang karya seni yang sudah ada—baik karya orang lain, karya lama sendiri, maupun karakter dari media populer (seperti anime, game, atau komik)—dengan gaya atau pendekatan baru.
           </p>
@@ -243,43 +243,43 @@ url:
   </main>
 
   <!-- Footer -->
-  <footer class="footer pt-5 pb-4">
-    <div class="container text-md-left">
-      <div class="row text-md-left">
-        <div class="col-md-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold">Lyra's Gallery</h5>
-          <p>Seni yang saya buat</p>
+  <section class="Footer">
+    <footer class="pt-5 pb-4">
+      <div class="container text-md-left">
+        <div class="row text-md-left">
+          <div class="col-md-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold">Lyra's Gallery</h5>
+            <p>Sebuah Gallery yang berisikan karya Seni</p>
+          </div>
+          <div class="col-md-2">
+            <h5 class="text-uppercase mb-4 font-weight-bold">Navigasi</h5>
+            <p><a href="#Hero" class="text-light text-decoration-none">Beranda</a></p>
+            <p><a href="#EmotionalArt" class="text-light text-decoration-none">Galeri</a></p>
+          </div>
+          <div class="col-md-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold">Ikuti Kami</h5>
+            <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-light me-3"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="col-md-4">
+            <h5 class="text-uppercase mb-4 font-weight-bold">Newsletter</h5>
+            <form>
+              <div class="input-group mb-3">
+                <input type="email" class="form-control" placeholder="Email kamu" aria-label="Email">
+                <button class="btn btn-outline-light" type="submit">Kirim</button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="col-md-2">
-          <h5 class="text-uppercase mb-4 font-weight-bold">Navigasi</h5>
-          <p><a href="#beranda" class="text-light text-decoration-none">Beranda</a></p>
-          <p><a href="#galeri" class="text-light text-decoration-none">Galeri</a></p>
-          <p><a href="#seniman" class="text-light text-decoration-none">Seniman</a></p>
-          <p><a href="#tiket" class="text-light text-decoration-none">Tiket</a></p>
-        </div>
-        <div class="col-md-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold">Ikuti Kami</h5>
-          <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-light me-3"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="col-md-4">
-          <h5 class="text-uppercase mb-4 font-weight-bold">Newsletter</h5>
-          <form>
-            <div class="input-group mb-3">
-              <input type="email" class="form-control" placeholder="Email kamu" aria-label="Email">
-              <button class="btn btn-outline-light" type="submit">Kirim</button>
-            </div>
-          </form>
+        <hr class="mb-4">
+        <div class="text-center">
+          <p class="mb-0">&copy; 2025 Lyra's Art.</p>
         </div>
       </div>
-      <hr class="mb-4">
-      <div class="text-center">
-        <p class="mb-0">&copy; 2025 Lyra's Art.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </section>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
