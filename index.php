@@ -8,6 +8,8 @@ $koneksi = new mysqli($host, $user, $pass, $dbname);
 if ($koneksi->connect_error) {
   die("Koneksi gagal: " . $koneksi->connect_error);
 }
+url:
+"login/livesearch.php";
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +44,7 @@ if ($koneksi->connect_error) {
       background-size: cover;
       color: white;
       text-align: center;
-      padding: 120px 15px;
+      padding: 150px 15px;
     }
 
     .hero-overlay {
@@ -120,13 +122,10 @@ if ($koneksi->connect_error) {
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#hero">Beranda</a></li>
-          <li class="nav-item"><a class="nav-link" href="#EmotionalArt">Emotional Art</a></li>
+          <li class="nav-item"><a class="nav-link" href="#EmotionalArt">Art</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Kabar</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Riset</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Galeri</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Jurnal</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Alumni</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+          <li class="nav-item"><a class="nav-link" href="login/login.php">Admin</a></li>
         </ul>
       </div>
     </div>
@@ -141,19 +140,33 @@ if ($koneksi->connect_error) {
       </div>
     </section>
 
+    <!-- Live Search Section -->
+    <section class="py-4 mt-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <input type="text" id="live_search" class="form-control" placeholder="Ketik untuk mencari karya...">
+          </div>
+        </div>
+        <div class="row mt-4" id="search_result">
+        </div>
+      </div>
+    </section>
+
+
     <!-- Emotional Art Section -->
     <section class="EmotionalArt section-padding mt-5" id="EmotionalArt">
       <div class="container">
         <div class="row">
           <!-- Deskripsi -->
-          <div class="col-lg-3 mb-4">
+          <div class="col-lg-3 mb-3">
             <h2 class="fw-bold text-white">Emotional Art</h2>
             <p class="text-white">
               <strong>Emotional art</strong> adalah bentuk seni yang diciptakan untuk menyampaikan dan membangkitkan emosi—baik dari sang seniman maupun dari orang yang melihatnya. Lewat goresan, warna, bentuk, atau simbol, karya ini membawa pesan yang mendalam: kesedihan, cinta, harapan, amarah, kesepian, dan berbagai nuansa perasaan lainnya.
             </p>
           </div>
 
-          <!-- Card Loop (copy-paste loop kamu di sini) -->
+          <!-- Card 1-3 -->
           <?php
           for ($i = 1; $i <= 3; $i++) {
             $query = "SELECT * FROM emotionalart WHERE id = $i";
@@ -161,8 +174,7 @@ if ($koneksi->connect_error) {
             if ($result && $result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
                 $deskripsi = strip_tags($row['deskripsi']);
-                $short = substr($deskripsi, 0, 250) . (strlen($deskripsi) > 250 ? "..." : "");
-          ?>
+                $short = substr($deskripsi, 0, 250) . (strlen($deskripsi) > 250 ? "..." : ""); ?>
                 <div class="col-md-3 mb-4 card1">
                   <a href="tampilanfoto.jpg/foto<?= $i ?>.php" class="text-decoration-none text-dark">
                     <div class="card h-100">
@@ -184,6 +196,50 @@ if ($koneksi->connect_error) {
         </div>
       </div>
     </section>
+  </main>
+
+  <!-- Redraw Art Section -->
+  <section class="EmotionalArt section-padding mt-1" id="EmotionalArt">
+    <div class="container">
+      <div class="row">
+        <!-- Deskripsi -->
+        <div class="col-lg-3 mb-4">
+          <h2 class="fw-bold text-white">redraw Art</h2>
+          <p class="text-white">
+            <strong>Redraw Art</strong> adalah kegiatan menggambar ulang karya seni yang sudah ada—baik karya orang lain, karya lama sendiri, maupun karakter dari media populer (seperti anime, game, atau komik)—dengan gaya atau pendekatan baru.
+          </p>
+        </div>
+
+        <!-- Card 4-6 -->
+        <?php
+        for ($i = 4; $i <= 6; $i++) {
+          $query = "SELECT * FROM emotionalart WHERE id = $i";
+          $result = $koneksi->query($query);
+          if ($result && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              $deskripsi = strip_tags($row['deskripsi']);
+              $short = substr($deskripsi, 0, 250) . (strlen($deskripsi) > 250 ? "..." : ""); ?>
+              <div class="col-md-3 mb-4 card1">
+                <a href="tampilanfoto.jpg/foto<?= $i ?>.php" class="text-decoration-none text-dark">
+                  <div class="card h-100">
+                    <img src="img/<?= htmlspecialchars($row['gambar']); ?>" class="card-img-top" alt="<?= htmlspecialchars($row['judul']); ?>">
+                    <div class="card-body">
+                      <h5 class="fw-bold"><?= htmlspecialchars($row['judul']); ?></h5>
+                      <p class="card-text"><?= htmlspecialchars($short); ?></p>
+                      <hr>
+                      <small>Ilustrasi | <?= htmlspecialchars($row['Tahun']); ?></small>
+                    </div>
+                  </div>
+                </a>
+              </div>
+        <?php
+            }
+          }
+        }
+        ?>
+      </div>
+    </div>
+  </section>
   </main>
 
   <!-- Footer -->
@@ -226,6 +282,29 @@ if ($koneksi->connect_error) {
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#live_search").on("input", function() {
+        let input = $(this).val();
+        if (input.length > 0) {
+          $.ajax({
+            url: "login/livesearch.php", // arahkan ke folder login
+            method: "POST",
+            data: {
+              input: input
+            },
+            success: function(data) {
+              $("#search_result").html(data);
+            }
+          });
+        } else {
+          $("#search_result").html("");
+        }
+      });
+    });
+  </script>
+
 </body>
 
 </html>
